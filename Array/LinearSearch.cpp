@@ -13,4 +13,5 @@ int ls(vector<int>& nums, int key, int n) {
 int main(){
     vector<int>nums= {1,2,3,4,5,6,7,8};
     cout<<ls(nums, 2,8);
+    
 }
