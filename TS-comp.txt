@@ -1,0 +1,5 @@
+if x loops runs for n times then time complexity = O(xn) ==== O(n)
+if x loops runs n times but they are nested then T.C = O(n^x) == n square or n cube..
+
+If we use extra space, for example if use array of n size to get solutionm then S.C will be O(n)..
+if no extra space is used, S.C = O(1)..
