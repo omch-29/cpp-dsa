@@ -16,3 +16,4 @@
 //     cout<<ls(nums, 2,8);
     
 // }
+//T.C= O(n), S.C=O(n)
