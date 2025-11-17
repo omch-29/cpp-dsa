@@ -18,7 +18,11 @@
             ]
         }
     ],
-    "version": 4
+    "version": 4,
+    "files.associations": {
+        "*.ejs": "html",
+        "iostream": "cpp"
+    }
 }
 
 
