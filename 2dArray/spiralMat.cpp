@@ -26,3 +26,8 @@ int spiral(int mat[][4], int n, int m){
     erow--,ecol--;
 }
 }
+
+int main(){
+    int mat[3][4]={{1,2,3,10},{4,5,6,11},{7,8,9,12}};
+    spiral(mat,3,4);
+}
