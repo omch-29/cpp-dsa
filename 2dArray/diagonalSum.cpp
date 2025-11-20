@@ -16,6 +16,7 @@ int diag(int mat[][3], int n){
     }
     return sum;
 }
+//two nested loops used thus, T.C = O(n^2)
 int diag2(int mat[][3], int n){
     int sum=0;
     for(int i=0;i<n;i++){
@@ -23,10 +24,10 @@ int diag2(int mat[][3], int n){
         if(i!=n-i-1) sum+=mat[i][n-i-1];
     }
     return sum;
-}
+} //here, T.C = O(n)
 int main(){
    int mat[3][3]={{1,2,3},{5,6,7},{9,10,11}};
-   cout<<diag(mat,3);
+   cout<<diag2(mat,3);
    cout<<endl;
    cout<<diag2(mat,3);
 }
