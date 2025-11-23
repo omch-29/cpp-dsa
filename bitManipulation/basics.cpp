@@ -12,5 +12,8 @@ int main(){
     cout<<(7<<2)<<endl;
 //7=0000 0111 , it sleft shift by 1= remove 1st digit and add 0 and right most remaining places = 00001110, again = 00011100.
 //formula=> a<<b = a*(2^b)
+cout<<~(4)<<endl;
 //for right shift = a>>b = a/(2^b)
+
+     
 }
