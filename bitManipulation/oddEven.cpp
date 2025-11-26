@@ -9,6 +9,6 @@
 using namespace std;
 int main(){
     int n=11;
-    if(!(n&1)) cout<<"even"<<endl;
+    if(!(n&1)) cout<<"even"<<endl; // checking if n & 1 == 0
     else cout<<"odd\n";
 }
