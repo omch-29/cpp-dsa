@@ -8,24 +8,44 @@
 #include <climits>
 using namespace std;
 
-class Student {
-    string name;
-    float cgpa;
-public:
+// class Student {
+//     string name;
+//     float cgpa;
+// public:
 
-    void getpec(){
-        cout<< cgpa*10<<"%"<<endl;
+//     void getpec(){
+//         cout<< cgpa*10<<"%"<<endl;
+//     }
+//     void setName(string nameval){
+//         name=nameval;
+//     }
+//     string getName(){
+//         return name;
+//     }
+// };
+class Car {
+    string name;
+    float price;
+public:
+    Car(){
+        cout<<"constructor called\n";
     }
-    void setName(string nameval){
+    Car( string nameval, float priceval){
+        cout<<"constructor called\n";
         name=nameval;
+        price=price;
     }
     string getName(){
         return name;
     }
 };
+//Encapsulation: wrapping up data and member functions(methods) in a single unit. It also implements data hiding.
+//Constructor: Special method invoked automatically during object creation.
 int main(){
-    Student s1;
-    s1.setName("me");
-    cout<<s1.getName();
+    // Student s1;
+    // s1.setName("me");
+    // cout<<s1.getName();
+    Car c1("alto",120000);
+    cout<<c1.getName();
     return 0;
 }
