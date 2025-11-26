@@ -9,19 +9,23 @@
 using namespace std;
 
 class Student {
-public:
     string name;
     float cgpa;
+public:
 
     void getpec(){
         cout<< cgpa*10<<"%"<<endl;
     }
+    void setName(string nameval){
+        name=nameval;
+    }
+    string getName(){
+        return name;
+    }
 };
 int main(){
     Student s1;
-    s1.name="me";
-    s1.cgpa=9.2;
-    s1.getpec();
-    cout<<s1.name<<endl;
+    s1.setName("me");
+    cout<<s1.getName();
     return 0;
 }
