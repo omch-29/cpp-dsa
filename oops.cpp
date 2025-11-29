@@ -38,6 +38,9 @@ public:
     string getName(){
         return name;
     }
+    ~Car(){
+        cout<<"ended\n";
+    }
 };
 //Encapsulation: wrapping up data and member functions(methods) in a single unit. It also implements data hiding.
 //Constructor: Special method invoked automatically during object creation.
@@ -46,6 +49,6 @@ int main(){
     // s1.setName("me");
     // cout<<s1.getName();
     Car c1("alto",120000);
-    cout<<c1.getName();
+    cout<<c1.getName()<<"\n";
     return 0;
 }
