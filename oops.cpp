@@ -60,12 +60,23 @@ single class has same funcn           P and C class ahve same .....*/
 Abstract class : only gives blurprint.
 pure virtual function = abstract funcn with no logic i.e=0 */
 
+class Try{
+    public:
+    void count(){
+        static int cnt=0; //static keyword.
+        cnt++;
+        cout<<"count="<<cnt;
+    }
+};
 
 int main(){
     // Student s1;
     // s1.setName("me");
     // cout<<s1.getName();
     Car c1("alto",120000);
-    cout<<c1.getName()<<"\n";
+    // cout<<c1.getName()<<"\n";
+    Try t1;
+    t1.count();
+    t1.count();
     return 0;
 }
