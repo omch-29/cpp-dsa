@@ -11,7 +11,7 @@ int fact(int n){
 }
 int fib(int n){
     if(n==0 || n==1) return n;
-    return fib(n-1)+fib(n-2);
+    return fib(n-1)+fib(n-2); //at fib, n=n-1 + n-2
 }
 int main(){
     cout<<fact(6)<<endl;
