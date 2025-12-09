@@ -13,6 +13,7 @@ int main(){
     scanf("%d",&n);
     printf("\nEnter numbers to see all permutations:");
     for(int i=0;i<n;i++) scanf("%d",&num[i]);
+    
     printf("\npermutations are:\n");
     for(i=0;i<n;i++){
         for(j=0;j<n-1;j++){
