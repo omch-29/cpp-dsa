@@ -21,6 +21,6 @@ int main(){
         else end=mid-1;
     }
     if(!f){
-        printf("inv");
+        printf("invalid target");
     }
 }
