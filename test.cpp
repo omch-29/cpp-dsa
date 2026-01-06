@@ -11,6 +11,6 @@ int main() {
     cout<<"enter integer:";
     cin>>n;
     cout<<isit(n);
-    if(isit) cout<<"\neven";
-    else cout<<"odd";
+    if(isit(n)) cout<<"\neven";
+    else cout<<"\nodd";
 }
