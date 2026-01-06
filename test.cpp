@@ -4,6 +4,9 @@ using namespace std;
 
 int main() {
     vector<int> nums = {1, 2, 3, 4, 5};
-    cout << nums.size() << endl;    // should print 5
-    cout << nums[2] << endl;        // should print 3
+    int n;
+    cout<<"enter integer:";
+    cin>>n;
+    if((n/2)*2 == n) return true;
+    else return false;
 }

@@ -11,6 +11,7 @@ int ra(int arr[], int n){
         int temp=arr[st];
         arr[st]=arr[end];
         arr[end]=temp;
+        // swap(arr[st], arr[end]);
         st++;
         end--;
     }
@@ -30,8 +31,8 @@ int esra(int arr[], int n){
     }
 }
 int main(){
-    int arr[]={8,2,3,4,5};
-    int n=5;
+    int arr[]={1,2,3,4,5,6,7,8,9,10,11,12};
+    int n=12;
     // cout<<ra(arr,n);
-    cout<<esra(arr,n);
+    ra(arr,n);
 }
