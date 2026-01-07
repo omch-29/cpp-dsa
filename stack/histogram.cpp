@@ -24,8 +24,7 @@ int largestRectangleArea(vector<int>& heights){
     s.push(n);
     nsr[n-1]=n;
     for(int i=n-2;i>=0;i--){
-        int curr=heights[i];
-        while(!s.empty() && curr<=heights[s.top()]) s.pop();
+        while(!s.empty() && heights[i]<=heights[s.top()]) s.pop();
         if(s.empty()) nsr[i]=n;
         else nsr[i]=s.top();
         s.push(i);
