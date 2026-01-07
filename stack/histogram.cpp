@@ -6,8 +6,8 @@
 #include <climits>
 using namespace std;
 int largestRectangleArea(vector<int>& heights){
-        if (heights.empty()) return 0;
-        if (heights.size() == 1) return heights[0];
+       if(heights.empty()) return 0;
+       if(heights.size()==1) return heights[0];
         int n=heights.size();
     vector<int>nsr(n);
     vector<int>nsl(n);
@@ -15,8 +15,7 @@ int largestRectangleArea(vector<int>& heights){
     s.push(0);
     nsl[0]=-1;
     for(int i=1;i<n;i++){
-        int curr=heights[i];
-        while(!s.empty() && curr<=heights[s.top()]) s.pop();
+        while(!s.empty() && heights[i]<=heights[s.top()]) s.pop();
         if(s.empty()) nsl[i]=-1;
         else nsl[i]=s.top();
         s.push(i);
