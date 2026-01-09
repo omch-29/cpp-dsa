@@ -21,7 +21,19 @@ int largestRectangleArea(vector<int>& heights){
   }
   while(!s.empty()) s.pop();
   nsr[n-1]=n;
-  
+  s.push(n-1);
+  for(int i=n-2;i>=0;i--){
+    while(!s.empty() && heights[i]<=heights[s.top()]) s.pop();
+    if(s.empty()) nsr[i]=n;
+    else nsr[i]=s.top();
+    s.push(i);
+  }
+  int maxArea=0;
+  for(int i=0;i<n;i++){
+    int wt=nsr[i]-nsl[i]-1;
+    maxArea=max(maxArea, heights[i]*wt);
+  }
+  return maxArea;
 }
 int main(){
     vector<int>heights = {2,1,5,6,2,3};
