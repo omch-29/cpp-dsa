@@ -19,6 +19,9 @@ int largestRectangleArea(vector<int>& heights){
     else nsl[i]=s.top();
     s.push(i);
   }
+  while(!s.empty()) s.pop();
+  nsr[n-1]=n;
+  
 }
 int main(){
     vector<int>heights = {2,1,5,6,2,3};
