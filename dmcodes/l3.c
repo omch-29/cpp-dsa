@@ -11,16 +11,15 @@ int main(){
     int total=pow(2,n);
     for(int i=0;i<total;i++){
         printf("{");
-        int fst=1,mask=i;
+        int mask=i,fst=1;
         for(int j=0;j<n;j++){
             if(mask%2){
                 if(!fst) printf(",");
-            printf("%c", set[j]);
-            fst=0;
+                printf("%c",set[j]);
+                fst=0;
             }
-             mask/=2;
+            mask/=2;
         }
-        printf("}\n");
-       
+        printf("}");
     }
 }
