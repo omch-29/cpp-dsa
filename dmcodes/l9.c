@@ -1,19 +1,21 @@
 #include<stdio.h>
 int main(){
-    int a,b,n,ne=1,min,cost[10][10],mincost=0,i,j;
-    printf("Enter number of vertices:");
+    int i,j,a,b,n,ne=1,cost[10][10],mincost=0,min,visited[10]={0};
+    printf("Enter size:");
     scanf("%d",&n);
-    printf("Enter adjacency matrix:\n");
+    printf("Enter adjacency matrix:-");
     for(i=1;i<=n;i++){
         for(j=1;j<=n;j++){
             scanf("%d",&cost[i][j]);
             if(cost[i][j]==0) cost[i][j]=999;
         }
     }
+    visited[1]=1;
     while(ne<n){
         min=999;
-        for(i=1;i<=n;i++){
-            for(j=1;j<=n;j++){
+    for(i=1;i<=n;i++){
+        for(j=1;j<=n;j++){
+            if(visited[i]==1){
                 if(cost[i][j]<min){
                     min=cost[i][j];
                     a=i;
@@ -21,11 +23,15 @@ int main(){
                 }
             }
         }
-        printf("Edge(%d,%d)=%d\n",a,b,min);
+    }
+    if(visited[a]==0 || visited[b]==0){
+        printf("Edge(%d,%d)=%d",a,b,min);
         mincost+=min;
         cost[a][b]=cost[b][a]=999;
+        visited[b]=1;
         ne++;
     }
-    printf("\nMinimum spanning tree of weight = %d", mincost);
+}
+    printf("Minimum i sof size %d",mincost);
     return 0;
 }
