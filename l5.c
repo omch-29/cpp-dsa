@@ -1,20 +1,17 @@
 #include<stdio.h>
 #include<math.h>
-void print(int *num,int n){
+void print(int *num, int n){
     for(int i=0;i<n;i++){
-        printf("%d ",num[i]);
+        printf("%d",num[i]);
     }
     printf("\n");
 }
 int main(){
-    int num[10];
-    int temp,i,j,n;
-    printf("\nEnter no. of elements");
+    int i,j,n,num[10],temp;
+    printf("enetr size:");
     scanf("%d",&n);
-    printf("\nEnter numbers to see all permutations:");
-    for(int i=0;i<n;i++) scanf("%d",&num[i]);
-    
-    printf("\npermutations are:\n");
+    printf("enter elements:\n");
+    for(i=0;i<n;i++) scanf("%d",&num[i]);
     for(i=0;i<n;i++){
         for(j=0;j<n-1;j++){
             temp=num[j];
@@ -23,4 +20,5 @@ int main(){
             print(num,n);
         }
     }
+    return 0;
 }

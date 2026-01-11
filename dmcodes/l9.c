@@ -1,9 +1,9 @@
 #include<stdio.h>
 int main(){
-    int i,j,a,b,n,ne=1,cost[10][10],mincost=0,min,visited[10]={0};
-    printf("Enter size:");
+    int a,b,i,j,n,ne=1,min,mincost=0,cost[10][10],visited[10]={0};
+    printf("Enter size:\n");
     scanf("%d",&n);
-    printf("Enter adjacency matrix:-");
+    printf("Enter adjacency Matrix:\n");
     for(i=1;i<=n;i++){
         for(j=1;j<=n;j++){
             scanf("%d",&cost[i][j]);
@@ -13,25 +13,25 @@ int main(){
     visited[1]=1;
     while(ne<n){
         min=999;
-    for(i=1;i<=n;i++){
-        for(j=1;j<=n;j++){
-            if(visited[i]==1){
-                if(cost[i][j]<min){
-                    min=cost[i][j];
-                    a=i;
-                    b=j;
+        for(i=1;i<=n;i++){
+            for(j=1;j<=n;j++){
+                if(visited[i]==1){
+                    if(cost[i][j]<min){
+                        min=cost[i][j];
+                        a=i;
+                        b=j;
+                    }
                 }
             }
         }
+        if(visited[a]==0 || visited[b]==0){
+            printf("Edge(%d,%d)=%d\n",a,b,min);
+            mincost+=min;
+            cost[a][b]=cost[b][a]=999;
+            visited[b]=1;
+            ne++;
+        }
     }
-    if(visited[a]==0 || visited[b]==0){
-        printf("Edge(%d,%d)=%d",a,b,min);
-        mincost+=min;
-        cost[a][b]=cost[b][a]=999;
-        visited[b]=1;
-        ne++;
-    }
-}
-    printf("Minimum i sof size %d",mincost);
+    printf("minmum weight=%d",mincost);
     return 0;
 }

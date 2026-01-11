@@ -6,8 +6,7 @@ int gcd(int a, int b){
 }
 int main(){
     int a,b;
-    printf("\nEnter numbers:");
+    printf("enter elements:");
     scanf("%d%d",&a,&b);
-    printf("GCD(%d,%d)=%d",a,b,gcd(a,b));
-    
+    printf("gcd of %d and %d is: %d",a,b,gcd(a,b));
 }
