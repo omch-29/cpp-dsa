@@ -19,8 +19,15 @@ public:
     Trie(){
         root = new Node();
     }
-    void insert(string key){
-        
+    void insert(string key){                        //O(L)
+        Node* temp = root;
+        for(int i=0;i<key.size();i++){
+            if(temp->children.count(key[i])==0){
+                temp->children[key[i]] = new Node();
+            }
+            temp = temp->children[key[i]];
+        }
+        temp->endOfWord = true;
     }
 };
 
