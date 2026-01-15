@@ -48,7 +48,7 @@ public:
     }
  };
  int main(){
-    Graph graph(5);
+    Graph graph(7);
     graph.addEdge(0,1);
     graph.addEdge(0,2);
     graph.addEdge(1,3);
@@ -59,6 +59,6 @@ public:
     graph.addEdge(5,6);
     
 
-    graph.print();
+    graph.bfs();
     return 0;
  }
