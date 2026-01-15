@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<queue>
 #include<list>
 using namespace std;
 
@@ -26,14 +27,37 @@ public:
             cout<<endl;
         }
     }
+    void bfs(){                     //O(V + E)
+        queue<int> q;
+        vector<bool> vis(V, false);
+        q.push(0);
+        vis[0]=true;
+        while(q.size()>0){
+            int u = q.front(); q.pop();
+            cout<< u <<" ";
+
+            list<int> neighbors = l[u]; //u--v
+            for(int v : neighbors){
+                if(!vis[v]){
+                    vis[v]=true;
+                    q.push(v);
+                }
+            }
+        }
+        cout<<endl;
+    }
  };
  int main(){
     Graph graph(5);
     graph.addEdge(0,1);
-    graph.addEdge(1,2);
+    graph.addEdge(0,2);
     graph.addEdge(1,3);
-    graph.addEdge(2,3);
     graph.addEdge(2,4);
+    graph.addEdge(3,4);
+    graph.addEdge(3,5);
+    graph.addEdge(4,5);
+    graph.addEdge(5,6);
+    
 
     graph.print();
     return 0;
