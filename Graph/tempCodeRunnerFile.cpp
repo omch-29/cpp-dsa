@@ -1,1 +1,1 @@
-graph.addEdge(5,6);
+graph.dfs();

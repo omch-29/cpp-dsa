@@ -89,7 +89,7 @@ public:
     graph.addEdge(4,5);
     graph.addEdge(5,6);
     
-
+    graph.bfs();
     cout<<graph.hasPath(5,6);
     return 0;
  }
