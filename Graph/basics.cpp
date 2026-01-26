@@ -90,6 +90,6 @@ public:
     graph.addEdge(5,6);
     
     graph.bfs();
-    cout<<graph.hasPath(5,6);
+    cout<<graph.hasPath(1,5);
     return 0;
  }
