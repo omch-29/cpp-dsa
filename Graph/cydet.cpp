@@ -1,4 +1,5 @@
 #include<iostream>
+#include<stack>
 #include<list>
 #include<vector>
 #include<queue>
@@ -98,13 +99,36 @@ public:
         }
         return false;
     }
+    void topoHelper(int src, vector<bool>& vis, stack<int>& s){
+        vis[src]=true;
+        list<int>neighbors = l[src];
+        for(int v:neighbors){
+            if(!vis[v]) topoHelper(v, vis, s);
+        }
+        s.push(src);
+    }
+    void topoSort(){
+        vector<bool> vis(V, false);
+        stack<int>s;
+        for(int i=0;i<V;i++){
+            if(!vis[i]) topoHelper(i,vis,s);
+        }
+        while(!s.empty()){
+        cout<<s.top();
+        s.pop();
+    }
+    }
+    
 };
 int main(){
-    Graph graph(4,false);
-    graph.addEdge(1,0);
-    graph.addEdge(0,2);
+    Graph graph(6,false);
     graph.addEdge(2,3);
-    graph.addEdge(3,0);
+    graph.addEdge(3,1);
+    graph.addEdge(4,1);
+    graph.addEdge(5,0);
+    graph.addEdge(4,0);
+    graph.addEdge(5,2);
     // graph.print();
-    cout<<graph.isCycleDir()<<endl;
+    // cout<<graph.isCycleDir()<<endl;
+    graph.topoSort();
 }
