@@ -21,7 +21,7 @@ public:
     void insert(string key){
         Node* temp=root;
         for(int i=0;i<key.size();i++){
-            if(temp->children.count(key[i])==0) temp->children[key[i]]=new Node();
+            if(!temp->children.count(key[i])) temp->children[key[i]]=new Node();
             temp=temp->children[key[i]];
         }
         temp->endOfWord=true;
@@ -35,3 +35,12 @@ public:
         return temp->endOfWord;
     }
 };
+int main(){
+    vector<string> words= {"the", "e", "there", "their", "any", "thee"};
+    Trie trie;
+    for(int i=0;i<words.size();i++){
+        trie.insert(words[i]);
+    }
+    cout<<trie.search("their")<<endl;
+    return 0;
+}
