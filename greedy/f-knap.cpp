@@ -6,7 +6,7 @@ using namespace std;
 bool compare(pair<double,int>p1, pair<double,int>p2){
     return p1.first>p2.first;
 }
-int fractionalKnapSack(vector<int>val, vector<int> wt, int w){
+int fractionalKnapSack(vector<int>&val, vector<int> &wt, int w){
     int n=val.size();
     vector<pair<double,int>>ratio(n,{0.0,0});
     for(int i=0;i<n;i++){
