@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include <algorithm>
 #include<climits>
 using namespace std;
 bool compare(pair<double,int>p1, pair<double,int>p2){
@@ -12,12 +13,12 @@ int fractionalKnapSack(vector<int>val, vector<int> wt, int w){
         ratio[i]={val[i]/(double)wt[i],i};
     }
     sort(ratio.begin(),ratio.end(),compare);
-    int ans=0;
+    double ans=0;
     for(int i=0;i<n;i++){
         int idx=ratio[i].second;
-        if(wt[idx]<w){
+        if(wt[idx]<=w){
             ans+=val[idx];
-            w-=w;
+            w-=wt[idx];
         }else{
             ans+=ratio[i].first * w;
             w=0;
