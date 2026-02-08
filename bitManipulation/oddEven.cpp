@@ -9,8 +9,8 @@
 using namespace std;
 int main(){
     int n;
-    cout<<"enter number: ";
+    cout<<"enter:";
     cin>>n;
-    if(n & 1 == 0) cout<<"even";
+    if((n&1)==0) cout<<"even";
     else cout<<"odd";
 }
