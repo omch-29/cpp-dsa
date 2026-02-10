@@ -6,6 +6,7 @@
 #include<unordered_map>
 #include <climits>
 using namespace std;
+//return subarray of size k with maxAverage
 double sw(vector<int>&nums, int k){
     double windowSum=0,maxSum=0;
     for(int i=0;i<k;i++){
