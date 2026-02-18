@@ -42,3 +42,4 @@ int main(){
     cout<<me(arr)<<endl;
     cout<<me3(arr);
 }
+//mjdfef
