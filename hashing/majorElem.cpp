@@ -40,6 +40,6 @@ int me3(vector<int>& nums){
 int main(){
     vector<int> arr={3,2,3};
     cout<<me(arr)<<endl;
-    cout<<me3(arr);
+    cout<<me3(arr)<<endl;
+    cout<<me2(arr);
 }
-//mjdfef
