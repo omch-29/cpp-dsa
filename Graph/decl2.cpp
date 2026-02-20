@@ -32,6 +32,14 @@ public:
         vis[src]=true;
         queue<int>q;
         q.push(0);
+        while(!q.empty()){
+            int u=q.front(); q.pop();
+            cout<<u;
+            list<int> neighbor=l[u];
+            for(int v:neighbor){
+                if(!vis[v]) vis[v] = true; q.push(v);
+            }
+        }
     }
     void bfs(){
         vector<bool> vis(V);
