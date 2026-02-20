@@ -34,16 +34,31 @@ public:
         q.push(0);
         while(!q.empty()){
             int u=q.front(); q.pop();
-            cout<<u;
+            cout<<u<<" ";
             list<int> neighbor=l[u];
             for(int v:neighbor){
-                if(!vis[v]) vis[v] = true; q.push(v);
+                if(!vis[v]){
+                 vis[v] = true; 
+                 q.push(v);
+                }
             }
         }
     }
     void bfs(){
         vector<bool> vis(V);
         return bfsHelper(0,vis);
+    }
+    void dfsHelper(int src, vector<bool>& vis){
+        vis[src]=true;
+        cout<<src<<" ";
+        list<int> neighbor = l[src];
+        for(int v:neighbor){
+            if(!vis[v]) dfsHelper(v, vis);
+        }
+    }
+    void dfs(){
+        vector<bool> vis(V);
+        return dfsHelper(0,vis);
     }
 };
 int main(){
@@ -52,6 +67,8 @@ int main(){
     g1.addEdge(0,2);
     g1.addEdge(1,3);
     g1.addEdge(2,4);
-    g1.addEdge(3,4);
-    g1.print();
+    // g1.addEdge(3,4);
+    g1.dfs();
+    cout<<endl;
+    g1.bfs();
 }
