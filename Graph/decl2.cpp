@@ -28,6 +28,15 @@ public:
             cout<<endl;
         }
     }
+    void bfsHelper(int src, vector<bool>& vis){
+        vis[src]=true;
+        queue<int>q;
+        q.push(0);
+    }
+    void bfs(){
+        vector<bool> vis(V);
+        return bfsHelper(0,vis);
+    }
 };
 int main(){
     Graph g1(5);
