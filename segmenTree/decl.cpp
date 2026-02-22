@@ -34,5 +34,5 @@ int main(){
     SegmentTree st(arr);
     st.printTree();
     return 0;
-
+    //Segment Tree
 }
