@@ -18,13 +18,13 @@ int main(){
     cin>>n;
     // if((n&1)==0) cout<<"even";
     // else cout<<"odd";
-    // cout<<(n>>1);
-    // string res;
-    // while(n>0){
-    //     res+=char('0'+(n&1));
-    //     n=n>>1;
-    // }
-    // reverse(res.begin(),res.end());
-    // cout<<res;
-    cout<<isEven(n);
+    cout<<(n>>1)<<endl;
+    string res;
+    while(n>0){
+        res+=char('0'+(n&1));
+        n=n>>1;
+    }
+    reverse(res.begin(),res.end());
+    cout<<res;
+    // cout<<isEven(n);
 }
