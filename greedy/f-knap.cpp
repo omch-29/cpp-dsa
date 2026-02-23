@@ -13,6 +13,7 @@ int fractionalKnapSack(vector<int>&val, vector<int> &wt, int w){
         ratio[i]={val[i]/(double)wt[i],i};
     }
     sort(ratio.begin(),ratio.end(),compare);
+    // for(auto& it:ratio) cout<<it.first<<" "<<it.second<<endl;
     double ans=0;
     for(int i=0;i<n;i++){
         int idx=ratio[i].second;
