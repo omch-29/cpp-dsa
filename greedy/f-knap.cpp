@@ -25,9 +25,9 @@ int fractionalKnapSack(vector<int>&val, vector<int> &wt, int w){
             w=0;
             break;
         }
-    }//ans
+    }
     return ans;
-}
+}//ans=240
 int main(){
     vector<int>val={60,100,120};
     vector<int>weight={10,20,30};
