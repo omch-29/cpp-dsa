@@ -11,5 +11,16 @@ Node* reversePairs(Node* head){
     Node* prev=NULL;
     Node* curr = head;
     head = curr->next;
-    
+    while(curr && curr->next){
+        Node* next = curr->next;
+        Node* nextPair = next->next;
+        
+        next->next=curr;
+        curr->next=nextPair;
+        if(prev) prev->next=next;
+        
+        prev=curr;
+        curr=nextPair;
+    }
+    return head;
 }
