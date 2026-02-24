@@ -6,6 +6,8 @@
 #include<unordered_map>
 #include <climits>
 using namespace std;
+//x<<1   multiplies by 2
+//x>>1   divides by 2
 int getIthBit(int n, int i){            //mask=1<<i  concept=AND
     return (n&(1<<i)) !=0;
 }
