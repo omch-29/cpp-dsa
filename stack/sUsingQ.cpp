@@ -32,7 +32,7 @@ int main(){
     s.addVal(1);
     s.addVal(2);
     s.addVal(3);
-    cout<<s.pop();
-    cout<<s.pop();
-    cout<<s.pop();
+    cout<<s.top();
+    cout<<s.top();
+    cout<<s.top();
 }
