@@ -38,6 +38,6 @@ int tw2(vector<int>h){
     return water;
 }
 int main(){
-    vector<int>arr = {0,1,0,2,1,0,1,3,2,1,2,1};
-    cout<<tw(arr)<<endl;
+    vector<int>arr = {4,2,0,3,2,5};
+    cout<<tw(arr)<<endl<<tw2(arr);
 }
