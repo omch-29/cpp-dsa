@@ -20,7 +20,24 @@ int tw(vector<int>h){
     }
     return tw;
 }
+int tw2(vector<int>h){
+    int n=h.size();
+    int st=0,end=n-1;
+    int lmax=0,rmax=0,water=0;
+    while(st<end){
+        if(h[st]<h[end]){
+            lmax=max(lmax,h[st]);
+            water+=lmax-h[st];
+            st++;
+        }else{
+            rmax=max(rmax,h[end]);
+            water+=rmax-h[end];
+            end--;
+        }
+    }
+    return water;
+}
 int main(){
     vector<int>arr = {0,1,0,2,1,0,1,3,2,1,2,1};
-    cout<<tw(arr);
+    cout<<tw(arr)<<endl;
 }
