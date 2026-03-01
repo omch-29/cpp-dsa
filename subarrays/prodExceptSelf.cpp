@@ -19,3 +19,4 @@ int main(){
     vector<int>res = paes(arr);
     for(int r:res) cout<<r<<" ";
 }
+//product of array except self
