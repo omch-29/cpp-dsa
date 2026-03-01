@@ -1,37 +1,31 @@
-#include <iostream>
-#include <vector>
-#include<cstring>
-#include<stack>
-#include<unordered_map>
-#include <climits>
+#include<bits/stdc++.h>
 using namespace std;
 int largestRectangleArea(vector<int>& heights){
+  int n = heights.size();
   if(heights.empty()) return 0;
-  if(heights.size()==1) return heights[0];
-  int n=heights.size();
-  vector<int>nsr(n),nsl(n);
-  stack<int>s;
-  nsl[0]=-1;
-  s.push(0);
+  if(n==1) return 0;
+  vector<int>nsl(n),nsr(n);
+  stack<int>st;
+  st.push(0);
+  nsl[0]-1;
   for(int i=1;i<n;i++){
-    while(!s.empty() && heights[i]<=heights[s.top()]) s.pop();
-    if(s.empty()) nsl[i]=-1;
-    else nsl[i]=s.top();
-    s.push(i);
+    while(!st.empty() && heights[st.top()]>=heights[i]) st.pop();
+    if(!st.empty()) nsl[i]=st.top();
+    else nsl[i]=-1;
+    st.push(i);
   }
-  while(!s.empty()) s.pop();
+  while(!st.empty()) st.pop();
   nsr[n-1]=n;
-  s.push(n-1);
+  st.push(n-1);
   for(int i=n-2;i>=0;i--){
-    while(!s.empty() && heights[i]<=heights[s.top()]) s.pop();
-    if(s.empty()) nsr[i]=n;
-    else nsr[i]=s.top();
-    s.push(i);
+    while(!st.empty() && heights[st.top()]>=heights[i]) st.pop();
+    if(!st.empty()) nsr[i]=st.top();
+    else nsr[i]=n;
+    st.push(i);
   }
   int maxArea=0;
   for(int i=0;i<n;i++){
-    int wt=nsr[i]-nsl[i]-1;
-    maxArea=max(maxArea, heights[i]*wt);
+    maxArea = max(maxArea, (heights[i]*(nsr[i]-nsl[i]-1)));
   }
   return maxArea;
 }
