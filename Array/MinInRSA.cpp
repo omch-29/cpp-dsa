@@ -15,13 +15,14 @@ int search2(vector<int>& nums){
     int st=0,end=nums.size()-1;
     while(st<end){
         int mid = st+(end-st)/2;
-        if(nums[mid]<nums[end]) end=mid;
-        else st=mid+1;
+        if(nums[mid]>nums[st]) st=mid+1;
+        else end=mid;
     }
     cout<<nums[end]<<endl;
     return nums[st];
 }
 int main(){
-    vector<int> nums = {6,7,8,9,3,4,5};
-    cout<<search(nums);
+    vector<int> nums = {6,7,8,9,10,11,12,13,14,0,1,2,3,4,5};
+    cout<<search(nums)<<endl;
+    cout<<search2(nums);
 }
