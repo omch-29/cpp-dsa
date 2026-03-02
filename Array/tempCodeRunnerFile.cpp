@@ -1,0 +1,1 @@
+    // cout<<search2(nums);
