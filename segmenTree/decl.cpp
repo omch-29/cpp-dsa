@@ -13,8 +13,8 @@ public:
     }
     void buildTree(vector<int> &arr, int st, int end, int node){
         if(st==end){
-         tree[node]=arr[st];
-         return;
+            tree[node]=arr[st];
+            return;
         }
         int mid = st+(end-st)/2;
         buildTree(arr,st,mid,2*node+1);
