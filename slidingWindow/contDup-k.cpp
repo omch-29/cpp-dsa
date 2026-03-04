@@ -21,14 +21,15 @@ bool containsNearbyDuplicate(vector<int>& nums, int k){
 }
 bool containsNearbyDuplicate2(vector<int>& nums, int k){
     unordered_map<int,int>mp;
-    for(int i=0;i<nums.size();i++){
-        if(mp.count(nums[i]) && i-mp[nums[i]]<=k) return true;
+    int n=nums.size();
+    for(int i=0;i<n;i++){
+        if(mp.count(nums[i]) && mp[nums[i]]<=k) return true;
         mp[nums[i]]=i;
     }
     return false;
 }
 int main(){
     vector<int>arr={1,2,3,1};
-    cout<<containsNearbyDuplicate(arr,3);
+    cout<<containsNearbyDuplicate(arr,3)<<endl;
     cout<<containsNearbyDuplicate2(arr,3);
 }
