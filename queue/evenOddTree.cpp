@@ -15,6 +15,7 @@ struct TreeNode{
     }
 };
 class Solution{
+public:
     bool eot(TreeNode* root){
         int level=0;
         queue<TreeNode*>q;
@@ -42,12 +43,26 @@ class Solution{
 };
 
 int main(){
-    TreeNode* root = new TreeNode(0);
-    root->left = new TreeNode(10);
-    root->right = new TreeNode(4);
-    root->left->left = new TreeNode(3);
-    root->right->left = new TreeNode(7);
-    root->right->right = new TreeNode(9);
-    root->left->left->left = new TreeNode(12);
-    root->left->left->right = new TreeNode(8);
+    TreeNode* root = new TreeNode(1);
+
+root->left = new TreeNode(10);
+root->right = new TreeNode(4);
+
+root->left->left = new TreeNode(3);
+// root->left->right = NULL
+
+root->right->left = new TreeNode(7);
+root->right->right = new TreeNode(9);
+
+root->left->left->left = new TreeNode(12);
+root->left->left->right = new TreeNode(8);
+
+root->right->left->left = new TreeNode(6);
+// root->right->left->right = NULL
+
+// root->right->right->left = NULL
+root->right->right->right = new TreeNode(2);
+
+    Solution sol;
+    cout<<sol.eot(root);
 }
