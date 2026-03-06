@@ -26,11 +26,25 @@ vector<int> maxSlidingWindow2(vector<int>& nums, int k){
     }
     return res;
 }
+vector<int> maxS(vector<int>& nums, int k){
+    deque<int>dq;
+    vector<int>res;
+    for(int i=0;i<nums.size();i++){
+        if(!dq.empty() && dq.front()<=i-k) dq.pop_front();
+        while(!dq.empty() && nums[i]>=dq.back()) dq.pop_back();
+        dq.push_back(i);
+        if(i>=k-1) res.push_back(nums[dq.front()]);
+    }
+    return res;
+}
 int main(){
     vector<int>arr = {1,3,-1,-3,5,3,6,7};
     vector<int>res = maxSlidingWindow(arr,3);       //[3,3,5,5,6,7]
     vector<int>res2 = maxSlidingWindow2(arr,3);
+    vector<int>res3 = maxS(arr,3);
     for(int r:res) cout<<r<<" ";
     cout<<endl;
     for(int r:res2) cout<<r<<" ";
+    cout<<endl;
+    for(int r:res3) cout<<r<<" ";
 }
