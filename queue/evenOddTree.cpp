@@ -58,9 +58,7 @@ root->left->left->left = new TreeNode(12);
 root->left->left->right = new TreeNode(8);
 
 root->right->left->left = new TreeNode(6);
-// root->right->left->right = NULL
 
-// root->right->right->left = NULL
 root->right->right->right = new TreeNode(2);
 
     Solution sol;

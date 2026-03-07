@@ -29,5 +29,6 @@ string removeDuplicates2(string s){
     return res;
 }
 int main(){
-    cout<<removeDuplicates2("azxxzy");
+    cout<<removeDuplicates("azxxzy")<<endl;
+    cout<<removeDuplicates("abbaca");
 }
