@@ -34,6 +34,7 @@ int lp(string s){
 }
 int main(){
     cout<<lp("abccccdd")<<endl;;          //7
-    cout<<lp("a")<<endl;
+    cout<<lp("a")<<endl;                    //1
     cout<<lp2("abccccdd");
 }
+
