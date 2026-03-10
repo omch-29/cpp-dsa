@@ -8,7 +8,7 @@ string addStrings(string num1, string num2){
     string res="";
     while(i>=0 || j>=0 || carry){
         int sum=carry;
-        if(i>=0) sum+=(num1[i--]-'0');          //-'0' to convert into int
+        if(i>=0) sum+=(num1[i--]-'0');          //-'0' to convert str into int
         if(j>=0) sum+=(num2[j--]-'0');
         res+=(sum%10)+'0';                      //+'0' to convert int-> string
         carry=(sum/10);
