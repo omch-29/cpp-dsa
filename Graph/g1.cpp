@@ -15,26 +15,26 @@ public:
         l[u].push_back(v);
         if(isUndir) l[v].push_back(u);
     }
-    // void bfsHelper(int src, vector<bool>& vis){
-    //     vis[src]=true;
-    //     queue<int>q;
-    //     q.push(src);
-    //     while(!q.empty()){
-    //         int u = q.front(); q.pop();
-    //         cout<<u<<" ";
-    //         list<int> neighbor = l[u];
-    //         for(int v:neighbor){
-    //             if(!vis[v]){
-    //                 vis[v]=true;
-    //                 q.push(v);
-    //             }
-    //         }
-    //     }
-    // }
-    // void bfs(){
-    //     vector<bool>vis(V);
-    //     return bfsHelper(0, vis);
-    // }
+    void bfsHelper(int src, vector<bool>& vis){
+        vis[src]=true;
+        queue<int>q;
+        q.push(src);
+        while(!q.empty()){
+            int u = q.front(); q.pop();
+            cout<<u<<" ";
+            list<int> neighbor = l[u];
+            for(int v:neighbor){
+                if(!vis[v]){
+                    vis[v]=true;
+                    q.push(v);
+                }
+            }
+        }
+    }
+    void bfs(){
+        vector<bool>vis(V);
+        return bfsHelper(0, vis);
+    }
     void dfsHelper(int src, vector<bool>& vis){
         vis[src]=true;
         cout<<src<<" ";
