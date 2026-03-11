@@ -49,16 +49,16 @@ public:
     }
 };
 
-int main(){
-    Graph g1(6);
-    g1.addEdge(0,2);
-    g1.addEdge(0,1);
-    g1.addEdge(2,4);
-    g1.addEdge(1,3);
-    g1.addEdge(3,5);
-    g1.addEdge(4,5);
+// int main(){
+//     Graph g1(6);
+//     g1.addEdge(0,2);
+//     g1.addEdge(0,1);
+//     g1.addEdge(2,4);
+//     g1.addEdge(1,3);
+//     g1.addEdge(3,5);
+//     g1.addEdge(4,5);
     
-    g1.bfs();
-    cout<<endl;
-    g1.dfs();
-}
+//     g1.bfs();
+//     cout<<endl;
+//     g1.dfs();
+// }
