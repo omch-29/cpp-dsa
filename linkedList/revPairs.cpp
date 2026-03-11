@@ -47,3 +47,6 @@ int main() {
     cout << "Pairwise Reversed: ";
     printList(head);
 }
+
+
+//206, 876,83,203,1290

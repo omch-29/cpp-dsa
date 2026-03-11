@@ -24,7 +24,7 @@ public:
 
 int main(){
 
-    // Construct BST
+    
     TreeNode* root = new TreeNode(6);
     root->left = new TreeNode(2);
     root->right = new TreeNode(8);
@@ -35,7 +35,7 @@ int main(){
     root->right->left = new TreeNode(7);
     root->right->right = new TreeNode(9);
 
-    // Nodes for which we find LCA
+
     TreeNode* p = root->left;              // 2
     TreeNode* q = root->left->right;       // 4
 
