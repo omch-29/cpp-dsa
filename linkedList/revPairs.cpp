@@ -50,3 +50,4 @@ int main() {
 
 
 //206, 876,83,203,1290
+//remove nth node from back
