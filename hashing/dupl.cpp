@@ -17,7 +17,15 @@ int fd(vector<int>& nums){
     }
     return -1;
 }
+int fd2(vector<int>& nums){
+    for(int i=0;i<nums.size();i++){
+        int idx = abs(nums[i])-1;
+        if(nums[idx]<0) return nums[i];
+        else nums[idx]=-nums[idx];
+    }
+    return -1;
+}
 int main(){
-    vector<int>arr={1,2,3,4,1,5};
-    cout<<fd(arr);
+    vector<int>arr={1,-2,3,4,-2,5};
+    cout<<fd2(arr);
 }
