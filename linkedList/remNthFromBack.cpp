@@ -25,6 +25,23 @@ public:
         slow->next = slow->next->next;
         return dummy->next;
     }
+    ListNode* rcn(ListNode* head, int val){
+        ListNode* curr=head;
+        ListNode* dummy = new ListNode(0);
+        dummy->next=head;
+        ListNode* prev=dummy;
+        while(curr){
+            if(curr->val == val){
+                prev->next=curr->next;
+                delete curr;
+                curr=prev->next;
+            }else{
+                prev=curr;
+                curr=curr->next;
+            }
+        }
+        return dummy->next;
+    }
 };
 void printList(ListNode* head) {
     while (head) {
@@ -42,6 +59,8 @@ int main(){
 
     printList(head);
     Solution sol;
-    head = sol.rnn(head, 5);
+    // head = sol.rnn(head, 5);
+    head = sol.rcn(head, 3);
     printList(head);
+    
 }
