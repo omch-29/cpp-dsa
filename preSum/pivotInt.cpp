@@ -23,3 +23,5 @@ int main(){
     int n=8;
     cout<<pivot(n);
 }
+
+//git
