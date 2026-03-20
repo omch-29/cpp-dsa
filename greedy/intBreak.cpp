@@ -13,11 +13,8 @@ int ib(int n){
     return res*n;
 }
 
-
-
-
-
 int main(){
     int n = 10;     //36
-    cout<<ib(n);
+    cout<<ib(n)<<endl;
+    cout<<ib(11);       //54
 }
