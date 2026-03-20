@@ -55,7 +55,7 @@ public:
         ListNode* node = new ListNode(sum%10);
         carry=sum/10;
         node->next = head;
-        head=node;
+        head=node;              //inserting at front
     }
     return head;
 }
