@@ -13,8 +13,8 @@ int hd(int x, int y){
 int hd2(int x, int y){
     int val = x^y,cnt=0;
     while(val){
-        cnt+=val&1;
-        val>>=1;
+        cnt+=val&1;     //last bit
+        val>>=1;        //removing last bit
     }
     return cnt;
 }
